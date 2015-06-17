@@ -1,0 +1,50 @@
+/app/bootstrap.php.cache
+/app/cache/*
+!app/cache/.gitkeep
+/app/config/parameters.yml
+/app/logs/*
+!app/logs/.gitkeep
+/app/phpunit.xml
+/bin/
+/vendor/
+
+# Bootstrap
+app/bootstrap*
+
+# Symfony directories
+vendor
+vendor/*
+*/logs/*
+*/cache/*
+web/uploads/*
+web/bundles/*
+web/css/*
+web/js/*
+web/js/compiled/*
+src/*/map/
+src/*/om/
+app/propel/sql/*
+
+# Logs
+error.log
+access.log
+
+# Configuration files
+app/config/parameters.ini
+app/config/parameters.yml
+
+# Composer phar & lock
+composer.phar
+
+#phpstorm
+.idea
+
+# phpunit code coverage
+phpunit-report/*
+
+# atoum tests
+tests/atoum.clover.xml
+tests/coverage/*
+tests/coverage
+
+bin/security-checker
