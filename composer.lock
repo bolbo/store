@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1efa23c3fb951f62768185290cad5342",
+    "hash": "81c1ce905cce07a13aad93415101192e",
     "packages": [
         {
             "name": "atoum/atoum",
@@ -84,6 +84,55 @@
                 "unit testing"
             ],
             "time": "2015-01-12 13:54:27"
+        },
+        {
+            "name": "beberlei/assert",
+            "version": "v2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/beberlei/assert.git",
+                "reference": "160eba4d1fbe692e42b3cf8a20b92ab23e3a8759"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/beberlei/assert/zipball/160eba4d1fbe692e42b3cf8a20b92ab23e3a8759",
+                "reference": "160eba4d1fbe692e42b3cf8a20b92ab23e3a8759",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Assert": "lib/"
+                },
+                "files": [
+                    "lib/Assert/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de"
+                }
+            ],
+            "description": "Thin assertion library for input validation in business models.",
+            "keywords": [
+                "assert",
+                "assertion",
+                "validation"
+            ],
+            "time": "2014-12-18 19:12:40"
         },
         {
             "name": "behat/behat",
@@ -2239,7 +2288,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/314a884d2ecb3c78a26e91d61f0898cf447b8c5c",
+                "url": "https://api.github.com/repos/pomm-project/Foundation/zipball/92d09ab4141783ba28dd59baaa803be244e0bca1",
                 "reference": "314a884d2ecb3c78a26e91d61f0898cf447b8c5c",
                 "shasum": ""
             },
@@ -2293,7 +2342,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/bcacba9af3af55a5f2042242d60e245aa7641a82",
+                "url": "https://api.github.com/repos/pomm-project/ModelManager/zipball/4c94f016769aa11fa784f54608a89dc7e7fedc7b",
                 "reference": "bcacba9af3af55a5f2042242d60e245aa7641a82",
                 "shasum": ""
             },

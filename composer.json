@@ -35,7 +35,8 @@
         "behat/behat": "3.0.*@dev",
         "guzzle/guzzle": "3.9.*@dev",
         "guzzlehttp/guzzle": "5.0.*@dev",
-        "cocur/slugify": "dev-master"
+        "cocur/slugify": "dev-master",
+        "beberlei/assert": "~2.0"
     },
     "conflict": {
         "symfony/routing": "2.4.1"
