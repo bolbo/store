@@ -81,5 +81,4 @@ interface AddressInterface
      * @param string $country
      */
     public function setCountry($country = null);
-
 }

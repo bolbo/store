@@ -3,6 +3,10 @@ namespace Bolbo\Component\Product\Model;
 
 use Bolbo\Component\Store\Model\ProductInterface;
 
+/**
+ * Interface ProductRepository
+ * @package Bolbo\Component\Product\Model
+ */
 interface ProductRepository
 {
     /**

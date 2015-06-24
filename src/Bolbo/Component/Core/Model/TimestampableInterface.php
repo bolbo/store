@@ -2,7 +2,7 @@
 /**
  * PersonInterface.php
  */
-namespace Bolbos\Component\Resource\Model;
+namespace Bolbo\Component\Resource\Model;
 
 /**
  * @author Joseph Bielawski <stloyd@gmail.com>

@@ -1,52 +1,44 @@
 <?php
 /**
- * Email.php
+ * PhoneNumber.php
  *
  * @author    Bolbo
  */
 namespace Bolbo\Component\Person\Model;
 
-use Assert\Assertion;
 use Bolbo\Component\Core\ValueObject;
 
 /**
- * Class Email
+ * Class PhoneNumber
  * @package Bolbo\Component\Person\Model
  */
-class Email implements ValueObject
+class PhoneNumber implements ValueObject
 {
     /**
      * @var string
      */
     private $value;
+    /**
+     * @var string
+     */
+    private $format;
 
     /**
-     * Create a new Email
+     * Create a new PhoneNumber
      *
      * @param string $value
+     * @param string $format
      */
-    public function __construct($value)
+    public function __construct($value, $format)
     {
-        Assertion::email($value);
-
-        $this->value = $value;
-    }
-
-    /**
-     * Create a new instance from a native form
-     *
-     * @param  mixed       $native
-     * @return ValueObject
-     */
-    public static function fromNative($native)
-    {
-        return new Email($native);
+        $this->value  = $value;
+        $this->format = $format;
     }
 
     /**
      * Determine equality with another Value Object
      *
-     * @param  ValueObject $object
+     * @param ValueObject $object
      * @return bool
      */
     public function equals(ValueObject $object)

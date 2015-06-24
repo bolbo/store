@@ -20,5 +20,4 @@ interface AuthorInterface extends
     PersonInterface,
     AddressInterface
 {
-
 }

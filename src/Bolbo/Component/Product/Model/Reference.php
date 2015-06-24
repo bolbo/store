@@ -3,6 +3,10 @@ namespace Bolbo\Component\Product\Model;
 
 use Bolbo\Component\Core\ValueObject;
 
+/**
+ * Class Reference
+ * @package Bolbo\Component\Product\Model
+ */
 class Reference implements ValueObject
 {
     /**

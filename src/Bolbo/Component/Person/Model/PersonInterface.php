@@ -1,10 +1,14 @@
 <?php
-
-namespace Bolbo\Component\Person\Model;
 /**
  * PersonInterface.php
  *
  * @author    Bolbo
+ */
+namespace Bolbo\Component\Person\Model;
+
+/**
+ * Interface PersonInterface
+ * @package Bolbo\Component\Person\Model
  */
 interface PersonInterface
 {

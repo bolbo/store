@@ -1,6 +1,6 @@
 <?php
 /**
- * Email.php
+ * Price.php
  *
  * @author    Bolbo
  */
@@ -10,10 +10,10 @@ use Assert\Assertion;
 use Bolbo\Component\Core\ValueObject;
 
 /**
- * Class Email
+ * Class Price
  * @package Bolbo\Component\Person\Model
  */
-class Email implements ValueObject
+class Price implements ValueObject
 {
     /**
      * @var string
@@ -21,13 +21,13 @@ class Email implements ValueObject
     private $value;
 
     /**
-     * Create a new Email
+     * Create a new Price
      *
      * @param string $value
      */
     public function __construct($value)
     {
-        Assertion::email($value);
+        Assertion::float($value);
 
         $this->value = $value;
     }
@@ -35,18 +35,18 @@ class Email implements ValueObject
     /**
      * Create a new instance from a native form
      *
-     * @param  mixed       $native
+     * @param mixed $native
      * @return ValueObject
      */
     public static function fromNative($native)
     {
-        return new Email($native);
+        return new Price($native);
     }
 
     /**
      * Determine equality with another Value Object
      *
-     * @param  ValueObject $object
+     * @param ValueObject $object
      * @return bool
      */
     public function equals(ValueObject $object)
