@@ -6,7 +6,7 @@
  */
 namespace Bolbo\Component\Store\Model;
 
-use Bolbo\Component\Person\Model\Price;
+use Bolbo\Component\Product\Model\Price;
 use Bolbo\Component\Product\Model\Reference;
 use Bolbo\Component\Resource\Model\SoftDeletableInterface;
 use Bolbo\Component\Resource\Model\TimestampableInterface;

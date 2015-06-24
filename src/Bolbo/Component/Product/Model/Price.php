@@ -4,14 +4,14 @@
  *
  * @author    Bolbo
  */
-namespace Bolbo\Component\Person\Model;
+namespace Bolbo\Component\Product\Model;
 
 use Assert\Assertion;
 use Bolbo\Component\Core\ValueObject;
 
 /**
  * Class Price
- * @package Bolbo\Component\Person\Model
+ * @package Bolbo\Component\Product\Model
  */
 class Price implements ValueObject
 {

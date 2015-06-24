@@ -1,13 +1,16 @@
 <?php
 /**
  * AuthorInterface.php
- * @package Bolbo\Component\Person\Model
+ * @package Bolbo\Component\Product\Model
  * @author Bolbo
  */
-namespace Bolbo\Component\Person\Model;
+namespace Bolbo\Component\Product\Model;
 
+use Bolbo\Component\Person\Model\AddressInterface;
+use Bolbo\Component\Person\Model\GenderInterface;
+use Bolbo\Component\Person\Model\PersonInterface;
 use Bolbo\Component\Resource\Model\SoftDeletableInterface;
-use Bolbos\Component\Resource\Model\TimestampableInterface;
+use Bolbo\Component\Resource\Model\TimestampableInterface;
 
 /**
  * Interface AuthorInterface
