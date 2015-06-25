@@ -4,12 +4,10 @@
  *
  * @author    Bolbo
  */
-namespace Bolbo\Component\Store\Model;
+namespace Bolbo\Component\Product\Model;
 
-use Bolbo\Component\Product\Model\Price;
-use Bolbo\Component\Product\Model\Reference;
-use Bolbo\Component\Resource\Model\SoftDeletableInterface;
-use Bolbo\Component\Resource\Model\TimestampableInterface;
+use Bolbo\Component\Core\Model\SoftDeletableInterface;
+use Bolbo\Component\Core\Model\TimestampableInterface;
 
 /**
  * Product

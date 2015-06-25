@@ -2,7 +2,7 @@
 /**
  * PersonInterface.php
  */
-namespace Bolbo\Component\Resource\Model;
+namespace Bolbo\Component\Core\Model;
 /**
  * Interface SoftDeletableInterface
  * @package Bolbo\Component\Resource\Model

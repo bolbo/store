@@ -1,7 +1,7 @@
 <?php
 namespace Bolbo\Component\Product\Model;
 
-use Bolbo\Component\Store\Model\ProductInterface;
+use Bolbo\Component\Product\Model\ProductInterface;
 
 /**
  * Interface ProductRepository
