@@ -1,6 +1,7 @@
 <?php
 namespace Bolbo\Component\Product\Model;
 
+use Assert\Assertion;
 use Bolbo\Component\Core\ValueObject;
 
 /**
@@ -21,18 +22,8 @@ class Reference implements ValueObject
      */
     public function __construct($value)
     {
+        Assertion::Alnum($value);
         $this->value = $value;
-    }
-
-    /**
-     * Create a new instance from a native form
-     *
-     * @param mixed $native
-     * @return ValueObject
-     */
-    public static function fromNative($native)
-    {
-        return new Reference($native);
     }
 
     /**
