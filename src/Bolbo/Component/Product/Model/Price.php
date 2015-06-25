@@ -27,20 +27,9 @@ class Price implements ValueObject
      */
     public function __construct($value)
     {
-        Assertion::float($value);
+        Assertion::nullOrFloat($value);
 
         $this->value = $value;
-    }
-
-    /**
-     * Create a new instance from a native form
-     *
-     * @param mixed $native
-     * @return ValueObject
-     */
-    public static function fromNative($native)
-    {
-        return new Price($native);
     }
 
     /**
