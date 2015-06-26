@@ -9,8 +9,8 @@ namespace Bolbo\Component\Product\Model;
 use Bolbo\Component\Person\Model\AddressInterface;
 use Bolbo\Component\Person\Model\GenderInterface;
 use Bolbo\Component\Person\Model\PersonInterface;
-use Bolbo\Component\Resource\Model\SoftDeletableInterface;
-use Bolbo\Component\Resource\Model\TimestampableInterface;
+use Bolbo\Component\Core\Model\SoftDeletableInterface;
+use Bolbo\Component\Core\Model\TimestampableInterface;
 
 /**
  * Interface AuthorInterface
@@ -19,7 +19,7 @@ use Bolbo\Component\Resource\Model\TimestampableInterface;
 interface AuthorInterface extends
     TimestampableInterface,
     SoftDeletableInterface,
-    GenderInterface,
+    //GenderInterface,
     PersonInterface,
     AddressInterface
 {
