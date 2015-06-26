@@ -18,3 +18,6 @@ Atoum code coverage in Phpstorm
 http://www.jdecool.fr/blog/2014/08/19/visualiser-le-code-coverage-des-tests-atoum-dans-phpstorm.html
 
 -----
+
+# Generate Pomm Model class 
+./app/console pomm:generate:schema-all -d src -a 'Bolbo\Component\Model' database

@@ -21,13 +21,13 @@ CREATE TABLE author (
   updated_at TIMESTAMP WITHOUT TIME ZONE                                 NOT NULL DEFAULT now(),
   deleted_at TIMESTAMP WITHOUT TIME ZONE                                 NOT NULL DEFAULT now(),
   gender     INTEGER                                                     NOT NULL,
-  first_name CHARACTER VARYING                                           NOT NULL,
-  last_name  CHARACTER VARYING                                           NOT NULL,
+  firstname  CHARACTER VARYING                                           NOT NULL,
+  lastname   CHARACTER VARYING                                           NOT NULL,
   street     TEXT                                                        NULL,
   street2    TEXT                                                        NULL,
   postcode   CHARACTER VARYING                                           NULL,
   city       CHARACTER VARYING                                           NULL,
-  country_id INTEGER REFERENCES country                                  NULL,
+  country_id INTEGER REFERENCES country                                  NULL
 );
 
 

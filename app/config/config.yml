@@ -89,3 +89,11 @@ fos_http_cache:
                     cache_control: { public: true, max_age: 15, s_maxage: 30 }
                     last_modified: "-1 hour"
                     vary: [Accept-Encoding, Accept-Language]
+
+pomm:
+    configuration:
+        database:
+            dsn: 'pgsql://%db_user1%:%db_password1%@%db_host1%:%db_port1%/%db_name1%'
+            'class:session_builder': 'Bolbo\Component\Model\BolboSessionBuilder'
+    logger:
+        service: '@logger'
