@@ -19,7 +19,7 @@ class ReferenceIsUnique extends atoum\test
      */
     public function testReferenceIsNotUnique()
     {
-        $productRepositoryMockDoublonReference                                     = new \mock\Bolbo\Component\Product\Model\ProductRepository();
+        $productRepositoryMockDoublonReference                                     = new \mock\Bolbo\Component\Product\Model\ProductRepositoryInterface();
         $this->calling($productRepositoryMockDoublonReference)->productByReference = function () {
             return true;
         };
@@ -37,7 +37,7 @@ class ReferenceIsUnique extends atoum\test
      */
     public function testReferenceIUnique()
     {
-        $productRepositoryMockDoublonReference                                     = new \mock\Bolbo\Component\Product\Model\ProductRepository();
+        $productRepositoryMockDoublonReference                                     = new \mock\Bolbo\Component\Product\Model\ProductRepositoryInterface();
         $this->calling($productRepositoryMockDoublonReference)->productByReference = function () {
             return false;
         };

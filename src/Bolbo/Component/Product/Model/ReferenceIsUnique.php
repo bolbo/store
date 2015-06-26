@@ -15,9 +15,9 @@ class ReferenceIsUnique implements ReferenceSpecification
     /**
      * Create a new instance of the ReferenceIsUnique specification
      *
-     * @param ProductRepository $repository
+     * @param ProductRepositoryInterface $repository
      */
-    public function __construct(ProductRepository $repository)
+    public function __construct(ProductRepositoryInterface $repository)
     {
         $this->repository = $repository;
     }

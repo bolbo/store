@@ -1,20 +1,17 @@
 <?php
 namespace Bolbo\Component\Product\Model;
 
-use Bolbo\Component\Product\Model\ProductInterface;
-
-/**
- * Interface ProductRepository
- * @package Bolbo\Component\Product\Model
- */
-interface ProductRepository
+class ProductRepository implements ProductRepositoryInterface
 {
     /**
      * Add a new Product
      *
      * @param ProductInterface $product
      */
-    public function add(ProductInterface $product);
+    public function add(ProductInterface $product)
+    {
+        // TODO: Implement add() method.
+    }
 
     /**
      * Update an existing product
@@ -22,7 +19,10 @@ interface ProductRepository
      * @param ProductInterface $product
      * @return void
      */
-    public function update(ProductInterface $product);
+    public function update(ProductInterface $product)
+    {
+        // TODO: Implement update() method.
+    }
 
     /**
      * Find a product by their id
@@ -30,7 +30,10 @@ interface ProductRepository
      * @param int $id
      * @return Product
      */
-    public function productById($id);
+    public function productById($id)
+    {
+        // TODO: Implement productById() method.
+    }
 
     /**
      * Find a user by their email address
@@ -38,6 +41,9 @@ interface ProductRepository
      * @param Reference $reference
      * @return Reference
      */
-    public function productByReference(Reference $reference);
+    public function productByReference(Reference $reference)
+    {
+        // TODO: Implement productByReference() method.
+    }
 
 }
