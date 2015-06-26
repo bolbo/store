@@ -40,7 +40,7 @@ class Product implements ProductInterface
      */
     protected $status;
     /**
-     * @var
+     * @var Reference
      */
     protected $reference;
     /**
@@ -61,135 +61,14 @@ class Product implements ProductInterface
     protected $price;
 
     /**
-     * @return mixed
-     */
-    public function getStatus()
-    {
-        // TODO: Implement getStatus() method.
-    }
-
-    /**
-     * @param StatusInterface $status
-     * @return mixed
-     */
-    public function setStatus(StatusInterface $status)
-    {
-        // TODO: Implement setStatus() method.
-    }
-
-    /**
-     * @param Reference $reference
-     * @return mixed
-     */
-    public function setReference(Reference $reference)
-    {
-        // TODO: Implement setReference() method.
-    }
-
-    /**
-     * @return Reference
-     */
-    public function getReference()
-    {
-        // TODO: Implement getReference() method.
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getTitle()
-    {
-        // TODO: Implement getTitle() method.
-    }
-
-    /**
-     * @param $value
-     * @return mixed
-     */
-    public function setTitle($value)
-    {
-        // TODO: Implement setTitle() method.
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        // TODO: Implement getDescription() method.
-    }
-
-    /**
-     * @param $value
-     * @return mixed
-     */
-    public function setDescription($value)
-    {
-        // TODO: Implement setDescription() method.
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getCaracteristic()
-    {
-        // TODO: Implement getCaracteristic() method.
-    }
-
-    /**
-     * @param $value
-     * @return mixed
-     */
-    public function setCaracteristic($value)
-    {
-        // TODO: Implement setCaracteristic() method.
-    }
-
-    /**
-     * @return Price
-     */
-    public function getPrice()
-    {
-        // TODO: Implement getPrice() method.
-    }
-
-    /**
-     * @param Price $price
-     * @return mixed
-     */
-    public function setPrice(Price $price)
-    {
-        // TODO: Implement setPrice() method.
-    }
-
-    /**
-     * Is item deleted?
      *
-     * @return bool
      */
-    public function isDeleted()
+    public function __construct(Reference $reference)
     {
-        // TODO: Implement isDeleted() method.
-    }
-
-    /**
-     * Get the time of deletion.
-     *
-     * @return \DateTime
-     */
-    public function getDeletedAt()
-    {
-        // TODO: Implement getDeletedAt() method.
-    }
-
-    /**
-     * Set deletion time.
-     *
-     * @param \DateTime $deletedAt
-     */
-    public function setDeletedAt(\DateTime $deletedAt = null)
-    {
-        // TODO: Implement setDeletedAt() method.
+        $this->createdAt = new \DateTime();
+        $this->price     = new Price(0.0);
+        $this->status    = null;
+        $this->reference = $reference;
     }
 
     /**
@@ -199,17 +78,7 @@ class Product implements ProductInterface
      */
     public function getCreatedAt()
     {
-        // TODO: Implement getCreatedAt() method.
-    }
-
-    /**
-     * Get the time of last update.
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        // TODO: Implement getUpdatedAt() method.
+        return $this->createdAt;
     }
 
     /**
@@ -219,8 +88,19 @@ class Product implements ProductInterface
      */
     public function setCreatedAt(\DateTime $createdAt)
     {
-        // TODO: Implement setCreatedAt() method.
+        $this->createdAt = $createdAt;
     }
+
+    /**
+     * Get the time of last update.
+     *
+     * @return \DateTime
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
 
     /**
      * Set the time of last update.
@@ -229,7 +109,142 @@ class Product implements ProductInterface
      */
     public function setUpdatedAt(\DateTime $updatedAt)
     {
-        // TODO: Implement setUpdatedAt() method.
+        $this->updatedAt = $updatedAt;
     }
+
+
+    /**
+     * Get the time of deletion.
+     *
+     * @return \DateTime
+     */
+    public function getDeletedAt()
+    {
+        return $this->deletedAt;
+    }
+
+
+    /**
+     * Set deletion time.
+     *
+     * @param \DateTime $deletedAt
+     */
+    public function setDeletedAt(\DateTime $deletedAt = null)
+    {
+        $this->deletedAt = $deletedAt;
+    }
+
+    /**
+     * Is item deleted?
+     *
+     * @return bool
+     */
+    public function isDeleted()
+    {
+        return null !== $this->deletedAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @param StatusInterface $status
+     * @return mixed
+     */
+    public function setStatus(StatusInterface $status)
+    {
+        $this->status = $status;
+    }
+
+    /**
+     * @param Reference $reference
+     * @return mixed
+     */
+    public function setReference(Reference $reference)
+    {
+        $this->reference = $reference;
+    }
+
+    /**
+     * @return Reference
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function setTitle($value)
+    {
+        $this->title = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function setDescription($value)
+    {
+        $this->description = $value;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCaracteristic()
+    {
+        return $this->caracteristic;
+    }
+
+    /**
+     * @param $value
+     * @return mixed
+     */
+    public function setCaracteristic($value)
+    {
+        $this->caracteristic = $value;
+    }
+
+    /**
+     * @return Price
+     */
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * @param Price $price
+     * @return mixed
+     */
+    public function setPrice(Price $price)
+    {
+        $this->price = $price;
+    }
+
 
 }
