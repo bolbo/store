@@ -6,7 +6,6 @@
 namespace tests\units\Bolbo\Component\Product\Model;
 
 use Bolbo\Component\Product\Model\ReferenceIsUnique as testedClass;
-use Bolbo\Component\Product\Model\Reference;
 use mageekguy\atoum;
 
 /**
