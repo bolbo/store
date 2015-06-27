@@ -2,6 +2,7 @@
 namespace Bolbo\Component\Product\Model;
 
 use Bolbo\Component\Core\AbstractRepository;
+use Bolbo\Component\Model\Database\PublicSchema\Author;
 use Bolbo\Component\Model\Database\PublicSchema\AuthorModel;
 use PommProject\Foundation\Pomm;
 
@@ -47,10 +48,16 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
      * Add a new Author
      *
      * @param AuthorInterface $author
+     *
+     * @return \PommProject\ModelManager\Model\Model
      */
     public function add(AuthorInterface $author)
     {
-        // TODO: Implement add() method.
+        $element = new Author([
+            '' => '',
+        ]);
+        var_dump($element);exit;
+        return $this->getPommModel()->insertOne($element);
     }
 
     /**
