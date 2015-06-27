@@ -1,5 +1,11 @@
 Bolbo Store
 
+
+
+-- ------------------
+
+
+
 -- ------------------
 Unit tests: atoum framework (http://docs.atoum.org)
 Add files .atoum.php and .bootstrap.php in project root

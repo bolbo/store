@@ -1,3 +1,8 @@
+
 NelmioApiDocBundle:
   resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
   prefix:   /api/doc
+
+blog_author:
+    resource: "@BolboAppBundle/Controller/AuthorController.php"
+    type:     rest

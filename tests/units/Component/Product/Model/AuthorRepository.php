@@ -17,7 +17,7 @@ class AuthorRepository extends atoum\test
     public function test()
     {
         $pommMock = new \mock\PommProject\Foundation\Pomm();
-        $testedElement = new testedClass($pommMock, 'database', 'test');
+        $testedElement = new testedClass($pommMock, 'database', '\Bolbo\Component\Model\Database\PublicSchema\AuthorModel');
         var_dump($testedElement->all());
     }
 }

@@ -1,0 +1,28 @@
+{% extends "BolboAppBundle::layout.html.twig" %}
+
+{% block title "Bolbo - Author list" %}
+
+{% block content_header '' %}
+
+{% block content %}
+    <h1 class="title">{{ 'author.list.headline'|trans({}) }}</h1>
+
+
+    <ul id="author-list">
+        {% for id, author in data.authors %}
+            <li>
+
+                <a href="{{ path('get_author', {'id':author.author_id}) }}">{{ author.author_id }}</a>
+                [ XX comments ]
+                {#[<a href="{{ path('edit_authors', {'id':author.author_id}) }}">{{ 'post.edit.link'|trans({}, 'BolboBlobBundle') }}</a>]
+                [<a href="{{ path('remove_authors', {'id':author.author_id}) }}">{{ 'post.remove.link'|trans({}, 'BolboBlobBundle') }}</a>]
+#}
+            </li>
+        {% else %}
+            <li>{{ 'post.list.empty'|trans({}, 'BolboAppBundle') }}</li>
+        {% endfor %}
+    </ul>
+    <p>
+        {#<a href="{{ path('new_post') }}">{{ 'post.new.link'|trans({}, 'BolboBlogBundle') }}</a>#}
+    </p>
+{% endblock %}
