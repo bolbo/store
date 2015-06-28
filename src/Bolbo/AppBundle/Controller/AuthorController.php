@@ -44,17 +44,10 @@ class AuthorController extends FOSRestController
      *
      * @param Request $request the request object
      * @param ParamFetcherInterface $paramFetcher param fetcher service
-     *
-     * @return
+     * @return AuthorCollection
      */
     public function getAuthorsAction(Request $request, ParamFetcherInterface $paramFetcher)
     {
-        $offset = $paramFetcher->get('offset');
-        $start  = null == $offset ? 0 : $offset + 1;
-        $limit  = $paramFetcher->get('limit');
-        $filter = json_decode($paramFetcher->get('filter'));
-        $sort   = json_decode($paramFetcher->get('sort'));
-
         $authorRepository = $this->get('author.repository');
         $authors          = $authorRepository->all();
 

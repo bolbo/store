@@ -9,6 +9,9 @@ class AuthorCollection
      */
     public $authors = [];
 
+    public $offset;
+    public $limit;
+
     /**
      * @param Author[] $authors
      */
