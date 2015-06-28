@@ -66,20 +66,20 @@ class AuthorController extends FOSRestController
     }
 
     /**
-     * Get a single post.
+     * Get a single author.
      *
      * @ApiDoc(
-     *   output = "Bolbo\BlobBundle\Model\Post",
+     *   output = "Bolbo\Component\Product\Model\Author",
      *   statusCodes = {
      *     200 = "Returned when successful",
-     *     404 = "Returned when the post is not found"
+     *     404 = "Returned when the author is not found"
      *   }
      * )
      *
-     * @Annotations\View(templateVar="post")
+     * @Annotations\View(templateVar="author")
      *
      * @param Request $request the request object
-     * @param int $id the post id
+     * @param int $id the author id
      *
      * @return array
      *
@@ -89,16 +89,11 @@ class AuthorController extends FOSRestController
     {
         $authorRepository = $this->get('author.repository');
         $author           = $authorRepository->authorById($id);
-        if (false === $author) {
-            throw $this->createNotFoundException("Post does not exist.");
+        if (!$author) {
+            throw $this->createNotFoundException("Author does not exist.");
         }
 
-        $view  = new View($author);
-        $group = $this->container->get('security.authorization_checker')->isGranted('ROLE_API')
-            ? 'restapi'
-            : 'standard';
-        $view->getSerializationContext()->setGroups(array('Default', $group));
-
+        $view = new View($author);
         return $view;
     }
 

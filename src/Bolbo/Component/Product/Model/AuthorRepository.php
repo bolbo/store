@@ -1,10 +1,13 @@
 <?php
 namespace Bolbo\Component\Product\Model;
 
+use Bolbo\Component\Product\Model\Author;
 use Bolbo\Component\Core\AbstractRepository;
-use Bolbo\Component\Model\Database\PublicSchema\Author;
-use Bolbo\Component\Model\Database\PublicSchema\AuthorModel;
+
+//use Bolbo\Component\Model\Database\PublicSchema\Author;
+//use Bolbo\Component\Model\Database\PublicSchema\AuthorModel;
 use PommProject\Foundation\Pomm;
+use PommProject\Foundation\Where;
 
 /**
  * Class AuthorRepository
@@ -22,8 +25,9 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
      * @param string $databaseConnexion
      * @param $modelClass
      */
-    public function __construct(Pomm $pomm, $databaseConnexion = 'database', $modelClass)
+    public function __construct(Pomm $pomm, $databaseConnexion = 'database', $modelClass, AuthorHydrator $authorHydrator)
     {
+        $this->authorHydrator    = $authorHydrator;
         $this->databaseConnexion = $databaseConnexion;
         parent::__construct($pomm, $modelClass);
     }
@@ -53,11 +57,12 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
      */
     public function add(AuthorInterface $author)
     {
-        $element = new Author([
+        /*$element = new Author([
             '' => '',
         ]);
-        var_dump($element);exit;
-        return $this->getPommModel()->insertOne($element);
+        var_dump($element);
+        exit;*/
+        //return $this->getPommModel()->insertOne($element);
     }
 
     /**
@@ -79,7 +84,9 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
      */
     public function authorById($id)
     {
-        // TODO: Implement productById() method.
+        $element = $this->getPommModel()->findByPK(['author_id' => $id]);
+        $author  = new Author();
+        return $this->authorHydrator->hydrate($element->extract(), $author);
     }
 
 }

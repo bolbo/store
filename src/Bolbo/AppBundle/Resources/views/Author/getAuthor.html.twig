@@ -1,14 +1,15 @@
 {% extends "BolboAppBundle::layout.html.twig" %}
 
-{% block title "Bolbo Blog - Post" %}
+{% block title "Bolbo Store - Author" %}
 
 {% block content_header '' %}
 
 {% block content %}
-    <h1 class="title">Note #{{ id }}</h1>
-
+    <h1 class="title">Author #{{ id }}</h1>
+{{ dump(author) }}
+    {{ author }}
     <p>
-        <a href="{{ path('get_authors') }}">{{ 'post.list.link'|trans({}, 'BolboAppBundle') }}</a> <br>
+        <a href="{{ path('get_authors') }}">{{ 'author.list.link'|trans({}, 'BolboAppBundle') }}</a> <br>
         {#
         [<a href="{{ path('remove_posts', {'id': id}) }}">{{ 'post.remove.link'|trans({}, 'BolboBlogBundle') }}</a>]
         [<a href="{{ path('edit_posts', {'id': id}) }}">{{ 'post.edit.link'|trans({}, 'BolboBlogBundle') }}</a>]

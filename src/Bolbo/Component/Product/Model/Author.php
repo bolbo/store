@@ -78,6 +78,9 @@ class Author implements AuthorInterface
         $this->createdAt = new \DateTime();
     }
 
+    public function __toString(){
+        return $this->lastname.' ' .$this->firstname;
+    }
 
     /**
      * Get creation time.

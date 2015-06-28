@@ -2,9 +2,13 @@ parameters:
 #    bolbo_app.example.class: Bolbo\AppBundle\Example
 
 services:
+    author.hydrator:
+        class: Bolbo\Component\Product\Model\AuthorHydrator
+
     author.repository:
         class: Bolbo\Component\Product\Model\AuthorRepository
         arguments:
             - @pomm
             - %database_connexion%
             - \Bolbo\Component\Model\Database\PublicSchema\AuthorModel
+            - @author.hydrator
