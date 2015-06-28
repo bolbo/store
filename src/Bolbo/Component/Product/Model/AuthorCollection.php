@@ -2,36 +2,49 @@
 
 namespace Bolbo\Component\Product\Model;
 
-use Bolbo\Component\Model\Database\PublicSchema\Author;
-
 class AuthorCollection
 {
-
     /**
      * @var Author[]
      */
-    public $authors;
-
-    /**
-     * @var integer
-     */
-    public $offset;
-
-    /**
-     * @var integer
-     */
-    public $limit;
-
+    public $authors = [];
 
     /**
      * @param Author[] $authors
-     * @param integer $offset
-     * @param integer $limit
      */
-    public function __construct($authors = [], $offset = null, $limit = null)
+    public function __construct($authors = [])
     {
         $this->authors = $authors;
-        $this->offset  = $offset;
-        $this->limit   = $limit;
+    }
+
+    public function addItem(Author $author, $key = null)
+    {
+        if ($key == null) {
+            $this->authors[] = $author;
+        } else {
+            if (isset($this->authors[$key])) {
+                throw new \Exception("Key $key already in use.");
+            } else {
+                $this->authors[$key] = $author;
+            }
+        }
+    }
+
+    public function deleteItem($key)
+    {
+        if (isset($this->authors[$key])) {
+            unset($this->authors[$key]);
+        } else {
+            throw new \Exception("Invalid key $key.");
+        }
+    }
+
+    public function getItem($key)
+    {
+        if (isset($this->authors[$key])) {
+            return $this->authors[$key];
+        } else {
+            throw new \Exception("Invalid key $key.");
+        }
     }
 }

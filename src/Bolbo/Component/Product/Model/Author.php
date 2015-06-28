@@ -24,6 +24,7 @@ use Bolbo\Component\Person\Model\GenderInterface;
  */
 class Author implements AuthorInterface
 {
+    protected $authorId;
     /**
      * @var \DateTime
      */
@@ -78,8 +79,29 @@ class Author implements AuthorInterface
         $this->createdAt = new \DateTime();
     }
 
-    public function __toString(){
-        return $this->lastname.' ' .$this->firstname;
+    public function __toString()
+    {
+        return $this->lastname . ' ' . $this->firstname;
+    }
+
+    /**
+     * Get creation time.
+     *
+     * @return int
+     */
+    public function getAuthorId()
+    {
+        return $this->authorId;
+    }
+
+    /**
+     * Set creation time.
+     *
+     * @param int
+     */
+    public function setAuthorId($authorId)
+    {
+        $this->authorId = $authorId;
     }
 
     /**

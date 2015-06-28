@@ -45,7 +45,14 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
      */
     public function all()
     {
-        return $this->getPommModel()->findAll();
+        $list = $this->getPommModel()->findAll();
+
+        $collection = new AuthorCollection();
+        foreach ($list as $element) {
+            $author = new Author();
+            $collection->addItem($this->authorHydrator->hydrate($element->extract(), $author));
+        }
+        return $collection;
     }
 
     /**
@@ -85,7 +92,10 @@ class AuthorRepository extends AbstractRepository implements AuthorRepositoryInt
     public function authorById($id)
     {
         $element = $this->getPommModel()->findByPK(['author_id' => $id]);
-        $author  = new Author();
+        if (!$element) {
+            return null;
+        }
+        $author = new Author();
         return $this->authorHydrator->hydrate($element->extract(), $author);
     }
 

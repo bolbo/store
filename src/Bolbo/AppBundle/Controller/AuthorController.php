@@ -3,6 +3,7 @@
 namespace Bolbo\AppBundle\Controller;
 
 use Bolbo\Component\Product\Model\AuthorCollection;
+use Bolbo\Component\Product\Model\AuthorNotFoundException;
 use Bolbo\Component\Product\Model\AuthorRepository;
 use FOS\RestBundle\Util\Codes;
 
@@ -44,7 +45,7 @@ class AuthorController extends FOSRestController
      * @param Request $request the request object
      * @param ParamFetcherInterface $paramFetcher param fetcher service
      *
-     * @return array
+     * @return
      */
     public function getAuthorsAction(Request $request, ParamFetcherInterface $paramFetcher)
     {
@@ -57,12 +58,7 @@ class AuthorController extends FOSRestController
         $authorRepository = $this->get('author.repository');
         $authors          = $authorRepository->all();
 
-        if ('json' == $request->get('_format')) {
-            // fix for json export
-            $posts = $authors->extract();
-        }
-
-        return new AuthorCollection($authors, $offset, $limit);
+        return $authors;
     }
 
     /**
@@ -83,14 +79,14 @@ class AuthorController extends FOSRestController
      *
      * @return array
      *
-     * @throws NotFoundHttpException when post not exist
+     * @throws AuthorNotFoundException when post not exist
      */
     public function getAuthorAction(Request $request, $id)
     {
         $authorRepository = $this->get('author.repository');
         $author           = $authorRepository->authorById($id);
         if (!$author) {
-            throw $this->createNotFoundException("Author does not exist.");
+            throw new AuthorNotFoundException;
         }
 
         $view = new View($author);

@@ -26,6 +26,7 @@ class AuthorHydrator
 
     public function hydrate(array $data, Author $object)
     {
+        $object->setAuthorID($data['author_id']);
         $object->setCreatedAt($data['created_at']);
         $object->setUpdatedAt($data['updated_at']);
         $object->setDeletedAt($data['deleted_at']);
